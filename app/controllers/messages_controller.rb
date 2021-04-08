@@ -5,10 +5,10 @@ class MessagesController < ApplicationController
     end
 
     def create
-        @message = Message.create(msg_params)
+        @messages = Message.create(msg_params)
         if @message.save
             ActionCable.server.broadcast 'room_channel'
-                                          content: @message.content
+                                          content: @messages.content
     end
 
 

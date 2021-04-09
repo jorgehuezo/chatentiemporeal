@@ -3,14 +3,7 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-require ("@rails/ujs").start()
-require ("turbolinks").start()
-require ("jquery")
-require ("@rails/activestorage").start()
-require ("channels")
-
- $(document).on('turbolinks:load', function() {
-
-console.log('estamos listos')
-
- })
+ //= require jquery3 # add this line
+    //= require popper # add this line
+    //= require bootstrap # add this line
+    //= require_tree .

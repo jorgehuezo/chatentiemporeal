@@ -1,21 +1,29 @@
 class MessagesController < ApplicationController
 
-    def new 
-        @message = Message.new
-    end
-
-    def create
-        @message = Message.create(msg_params)
-        if @message.save
-            ActionCable.server.broadcast 'room_channel',{ content: @message.content}
+        def index
+          @chats = Chat.all
+          @chat = Chat.new
         end
-    end
-
-
-
-    private
-
-    def msg_params
-        params.require(:message).permit(:content)
-    end
-end
+  
+        def new
+          @chat = Chat.new
+        end
+  
+        def create
+          @chat = Chat.new(chat_params)
+          respond_to do |format|
+            if @chat.save
+              format.html { redirect_to @chat, notice: 'Message was successfully posted.' }
+              format.json { render :show, status: :created, location: @chat }
+            else
+              format.html { render :new }
+              format.json { render json: @chat.errors, status: :unprocessable_entity }
+            end
+          end
+        end
+  
+        private
+          def chat_params
+            params.require(:chat).permit(:username, :message)
+          end
+      end

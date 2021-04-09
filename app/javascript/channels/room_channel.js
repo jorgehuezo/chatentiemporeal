@@ -32,10 +32,11 @@ submit_messages = function(){
 $('message_content').on('keydown', function(event){
 
   if(event.keyCode ===13){
-
+    $('input').click()
+    event.target.value = ''
+    event.prevenDefault()
     console.log('estamos andando')
   }
-
 
 
 })

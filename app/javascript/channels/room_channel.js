@@ -17,3 +17,28 @@ consumer.subscriptions.create("RoomChannel", {
     // Called when there's incoming data on the websocket for this channel
   }
 });
+
+var submit_messages;
+
+$(document).on('turbolinks:load', function(){
+
+
+  submit_messages()
+})
+
+
+submit_messages = function(){
+
+$('message_content').on('keydown', function(event){
+
+  if(event.keyCode ===13){
+
+    console.log('estamos andando')
+  }
+
+
+
+})
+
+
+}

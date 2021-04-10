@@ -19,7 +19,7 @@ Rails.application.configure do
   if Rails.root.join('tmp', 'caching-dev.txt').exist?
     config.action_controller.perform_caching = true
     config.action_controller.enable_fragment_cache_logging = true
-    
+    skip_before_action :verify_authenticity_token
 
     config.cache_store = :memory_store
     config.public_file_server.headers = {
@@ -65,7 +65,7 @@ Rails.application.configure do
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
      
-  config.hosts << "2b808fcb461f.ngrok.io"
+  config.hosts << "98a5119b4f07.ngrok.io"
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
 

@@ -4,8 +4,7 @@ const {
 const webpack = require('webpack')
 
 
-environment.plugins.prepend('provide',
-new webpack.ProvidePlugin({
+environment.plugins.prepend('provide', new webpack.ProvidePlugin({
     $: 'jquery/src/jquery',
     jquery: 'jquery/src/jquery'
 })

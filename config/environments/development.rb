@@ -20,6 +20,11 @@ Rails.application.configure do
     config.action_controller.perform_caching = true
     config.action_controller.enable_fragment_cache_logging = true
     skip_before_action :verify_authenticity_token
+    
+    config.action_cable.url = "ws://localhost:3000/cable"
+
+    config.action_mailer.default_url_options = { host: 'localhost:3000' }
+
 
     config.cache_store = :memory_store
     config.public_file_server.headers = {
@@ -65,7 +70,7 @@ Rails.application.configure do
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
      
-  config.hosts << "98a5119b4f07.ngrok.io"
+  config.hosts << "d4f211259eee.ngrok.io"
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
 
@@ -75,4 +80,5 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+  
 end

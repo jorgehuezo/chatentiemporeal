@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'landing/index'
+
+
+  get 'aplication/index'
 
 
 resources :messages, only: [:new, :create]

@@ -1,6 +1,10 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+
+  config.hosts << /[a-z0-9]+\.eu\.ngrok\.io/
+
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded any time
@@ -21,9 +25,10 @@ Rails.application.configure do
     config.action_controller.enable_fragment_cache_logging = true
     skip_before_action :verify_authenticity_token
     
-    config.action_cable.url = "ws://localhost:3000/cable"
+    
+    #config.action_cable.url = "e8e55b2178a4.ngrok.io"
 
-    config.action_mailer.default_url_options = { host: 'localhost:3000' }
+    #config.action_mailer.default_url_options = { host: 'e8e55b2178a4.ngrok.io' }
 
 
     config.cache_store = :memory_store
@@ -70,7 +75,6 @@ Rails.application.configure do
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
      
-  config.hosts << "d4f211259eee.ngrok.io"
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
 
@@ -82,3 +86,4 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
   
 end
+

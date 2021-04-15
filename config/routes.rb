@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :users
+
   get 'landing/index'
 
-
-  get 'aplication/index'
+    get 'aplication/index'
 
 
 resources :messages, only: [:new, :create]

@@ -53,3 +53,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
+
+group :development do
+  gem 'ngrok-tunnel'
+  gem 'tty-box'
+end
